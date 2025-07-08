@@ -1,0 +1,94 @@
+/* Estilizando o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Uma fonte mais comum */
+    background-color: #282c34; /* Um fundo mais escurinho, tipo tema dark */
+    color: #fff; /* Cor do texto branca */
+    margin: 0; /* Remove margem padrão do navegador */
+    padding: 20px; /* Adiciona um respiro nas bordas */
+    text-align: center; /* Centraliza todo o texto */
+}
+
+/* Estilizando o título principal */
+h1 {
+    color: #61dafb; /* Uma cor azul clara chamativa */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+}
+
+/* Estilizando a lista não ordenada */
+ul {
+    list-style: none; /* Remove as bolinhas/números da lista */
+    padding: 0; /* Remove o padding padrão da lista */
+    display: flex; /* Começa a usar Flexbox para organizar os itens */
+    flex-wrap: wrap; /* Se não couber, os itens quebram linha */
+    justify-content: center; /* Centraliza os itens da lista */
+    gap: 20px; /* Espaçamento entre os itens da lista */
+}
+
+/* Estilizando cada item da lista (cada <li>) */
+li {
+    background-color: #3a3f47; /* Fundo mais claro para cada item */
+    padding: 20px; /* Espaço interno dentro do item */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Uma sombrinha pra dar profundidade */
+    width: 250px; /* Largura fixa para cada item */
+    text-align: center; /* Centraliza o texto dentro do item */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de hover */
+}
+
+/* Efeito quando o mouse passa por cima (hover) */
+li:hover {
+    transform: translateY(-5px); /* Move o item um pouco para cima */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável (mesmo não sendo ainda) */
+}
+
+/* Estilizando o título de cada saga dentro do <li> */
+li h2 {
+    color: #e0e0e0; /* Cor do título da saga */
+    margin: 0; /* Remove margem padrão do h2 dentro do li */
+    font-size: 1.5em; /* Aumenta um pouco o tamanho da fonte */
+}
+
+/* Estilizando as imagens dentro dos itens da lista */
+li img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu "card" */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 4px; /* Cantos levemente arredondados para a imagem */
+    margin-top: 15px; /* Um espacinho entre o título e a imagem */
+    display: block; /* Garante que a imagem se comporte como um bloco para o margin-top funcionar bem */
+    margin-left: auto; /* Centraliza a imagem se ela for menor que o max-width */
+    margin-right: auto; /* Centraliza a imagem se ela for menor que o max-width */
+}
+
+li p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #ccc; /* Uma cor mais suave para o texto */
+}
+
+li a {
+    display: inline-block; /* Para poder aplicar padding e margin */
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+li a:hover {
+    background-color: #4fa3d7; /* Mudar a cor no hover */
+}
+
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column; /* Coloca os cards um abaixo do outro */
+        align-items: center; /* Centraliza os cards na coluna */
+    }
+    li {
+        width: 90%; /* Ocupa quase toda a largura da tela */
+        max-width: 300px; /* Mas não fica grande demais em tablets */
+    }
+}
