@@ -1,3 +1,29 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    box-sizing: border-box; /* Isso faz com que padding e border sejam incluídos na largura/altura total de um elemento */
+}
+
+/* Estilizando o cabeçalho */
+header {
+    background-color: #1a1e24; /* Um fundo um pouco mais escuro que o body */
+    padding: 20px 0; /* Espaçamento interno em cima e embaixo */
+    margin-bottom: 10px; /*Esepaçamento abaixo do header*/
+    border-bottom: 1px solid #3a3f47; /* Uma linha sutil na parte de baixo */
+    border-radius: 8px; /* Cantos arredondados */
+}
+
+header h1 {
+    margin: 0; /* Remove a margem padrão do h1 dentro do header */
+    font-size: 2em; /* Aumenta um pouco o tamanho do título no header */
+}
+
+/* Estilo para o container (usado no header e footer) */
+.container {
+    max-width: 1200px; /* Mesma largura máxima que você usou no ul */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Espaçamento lateral para não grudar nas bordas */
+}
+
 /* Estilizando o corpo da página */
 body {
     font-family: Arial, sans-serif; /* Uma fonte mais comum */
@@ -22,6 +48,8 @@ ul {
     flex-wrap: wrap; /* Se não couber, os itens quebram linha */
     justify-content: center; /* Centraliza os itens da lista */
     gap: 20px; /* Espaçamento entre os itens da lista */
+    max-width: 1200px; /* Limita a largura máxima da lista para não ficar gigante em monitores muito grandes */
+    margin: 0 auto; /* Centraliza a lista na página quando ela não ocupa 100% da largura */
 }
 
 /* Estilizando cada item da lista (cada <li>) */
@@ -30,7 +58,8 @@ li {
     padding: 20px; /* Espaço interno dentro do item */
     border-radius: 8px; /* Cantos arredondados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Uma sombrinha pra dar profundidade */
-    width: 250px; /* Largura fixa para cada item */
+    flex: 1 1 280px; /* Permite que o item cresça, encolha e tenha uma largura base de 280px */
+    max-width: 300px; /* Garante que o card não fique muito grande */
     text-align: center; /* Centraliza o texto dentro do item */
     transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de hover */
 }
@@ -81,8 +110,51 @@ li a:hover {
     background-color: #4fa3d7; /* Mudar a cor no hover */
 }
 
+/* Estilo para o botão de toggle da sinopse */
+.toggle-sinopse {
+    background-color: #4fa3d7; /* Uma cor azul mais escura que o link */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px; /* Espaço acima do botão */
+    margin-bottom: 15px; /* Espaço abaixo do botão, antes do link "Saiba mais" */
+    transition: background-color 0.3s ease;
+}
+
+.toggle-sinopse:hover {
+    background-color: #397ba6; /* Cor no hover */
+}
+
+/* Garante que a sinopse completa tenha um espaçamento adequado */
+.sinopse p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #a0a0a0; /* Uma cor um pouco mais suave para o texto completo */
+    text-align: justify; /* Justifica o texto para ficar mais bonitinho */
+}
+
+/* Estilizando o rodapé */
+footer {
+    background-color: #1a1e24; /* O mesmo fundo do header */
+    padding: 20px 0;
+    margin-top: 40px; /* Espaço entre o conteúdo e o rodapé */
+    border-radius: 8px; /* Cantos arredondados */
+    border-top: 1px solid #3a3f47; /* Uma linha sutil na parte de cima */
+    color: #ccc; /* Cor do texto mais suave */
+    font-size: 0.9em;
+}
+
 /* Para telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduz o padding geral do corpo em telas menores */
+    }
+
     ul {
         flex-direction: column; /* Coloca os cards um abaixo do outro */
         align-items: center; /* Centraliza os cards na coluna */
